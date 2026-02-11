@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lewis Birthday Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="intro" class="intro" aria-live="polite">
+      <div class="intro-panel" role="status" aria-label="System intro">
+        <p class="intro-title">Boot Sequence</p>
+        <div id="intro-lines" class="intro-lines"></div>
+      </div>
+    </div>
+
+    <main id="app" class="app hidden" aria-hidden="true">
+      <header class="hero card">
+        <p class="eyebrow">System Event: Lewis_v22.02 initialized</p>
+        <h1>Lewis Birthday Party <span aria-hidden="true">🎂</span></h1>
+        <p class="hero-meta"><strong>Date:</strong> February 22</p>
+        <p class="hero-meta"><strong>Arrival:</strong> Please arrive at 6:00 PM</p>
+      </header>
+
+      <section class="card" aria-labelledby="activity-title">
+        <h2 id="activity-title">Escape Room</h2>
+        <p class="venue-name">Inmers Escape Room (ORTO Mall)</p>
+        <p class="venue-address">27 W Coast Hwy #02-10, Singapore 117867</p>
+        <a
+          class="btn"
+          href="https://inmersplay.com/contact/?utm_source=ig&utm_medium=social&utm_content=link_in_bio"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Navigate to Escape Room
+        </a>
+      </section>
+
+      <section class="card" aria-labelledby="dinner-title">
+        <h2 id="dinner-title">Dinner</h2>
+        <p class="venue-name">TAAN Asian Grill Bar</p>
+        <a
+          class="btn"
+          href="https://inline.app/booking/-MvvPhY6jCwCxO1ohIMa:inline-live-2/-MvvPhjVX04kJ-0cUNzo/form"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View / Navigate
+        </a>
+        <p class="warm-message">
+          After playing and eating, the only requirement is: everyone must have fun.
+        </p>
+      </section>
+
+      <section class="card" aria-labelledby="rsvp-title">
+        <h2 id="rsvp-title">RSVP</h2>
+        <p class="rsvp-question">Will you attend Lewis's birthday?</p>
+
+        <div class="rsvp-actions">
+          <button id="yesBtn" class="btn btn-yes" type="button">YES, I'll come</button>
+          <button id="noBtn" class="btn btn-no" type="button">NO, I cannot come</button>
+        </div>
+
+        <form
+          id="rsvpForm"
+          class="rsvp-form hidden"
+          action="https://formspree.io/f/xnjbjwag"
+          method="POST"
+          novalidate
+        >
+          <input
+            type="hidden"
+            name="event"
+            value="Lewis Birthday Party - Feb 22 6pm"
+          />
+          <label for="name">Name <span aria-hidden="true">*</span></label>
+          <input id="name" name="guest_name" type="text" required autocomplete="name" />
+
+          <label for="count">Number of people</label>
+          <input
+            id="count"
+            name="party_size"
+            type="number"
+            min="1"
+            step="1"
+            placeholder="Optional"
+          />
+
+          <label for="message">Message for Lewis</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="3"
+            placeholder="Optional birthday message"
+          ></textarea>
+
+          <button class="btn submit-btn" type="submit">Submit RSVP</button>
+        </form>
+
+        <div id="result" class="result" aria-live="polite"></div>
+      </section>
+
+      <footer class="footer">
+        <p>Powered by caffeine, friendship, and stable runtime vibes.</p>
+      </footer>
+    </main>
+
+    <canvas id="confetti" class="confetti" aria-hidden="true"></canvas>
+
+    <script src="script.js"></script>
+  </body>
+</html>
